@@ -1,0 +1,48 @@
+{
+  "name": "spos.lab1.server",
+  "displayName": "ShopManager",
+  "version": "0.1.0",
+  "main": "release.js",
+  "bin": "release.js",
+  "scripts": {
+    "dev": "npm run debug",
+    "debug": "node debug.js",
+    "release": "node release.js",
+    "start": "npm run release",
+    "install-deps": "npm i --only=prod --unsafe-perm --no-audit --no-progress --quiet",
+    "deploy": "node -v && npm -v && npm run install-deps && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./",
+    "compile": "node scripts/compile.js build"
+  },
+  "pkg": {
+    "assets": [
+      "./private/*.pem"
+    ],
+    "targets": [
+      "node12-win-x86"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/register": "^7.7.7",
+    "bluebird": "^3.7.2",
+    "open": "^7.0.0",
+    "total.js": "^3.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-import-resolver-node": "^0.3.2",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nexe": "^3.3.2",
+    "rcedit": "^2.1.0",
+    "upx": "^1.0.6"
+  },
+  "author": "Tema Smirnov <dev.tema@smirnov.one> (https://t.me/TemaSM)",
+  "license": "UNLICENSED"
+}
